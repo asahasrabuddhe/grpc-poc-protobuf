@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option go_package = "go.ajitem.com/pb/errors";
+
+package ajitem.errors;
+
+message Error {
+    int32 code = 1;
+    string message = 2;
+}

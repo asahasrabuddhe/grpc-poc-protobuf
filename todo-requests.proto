@@ -5,11 +5,61 @@ package ajitem.todo.requests;
 option go_package = "go.ajitem.com/pb/todo";
 
 import "todo.proto";
+import "error.proto";
 
+// Create
 message CreateTodoRequest {
     ajitem.todo.Todo todo = 1;
 }
 
 message CreateTodoResponse {
+    oneof id_or_error {
+        int32 todo_id = 1;
+        ajitem.errors.Error error = 2;
+    }
+}
+
+// Read One
+message ReadTodoRequest {
     int32 todo_id = 1;
+}
+
+message ReadTodoResponse {
+    oneof todo_or_error {
+        ajitem.todo.Todo todo = 1;
+        ajitem.errors.Error error = 2;
+    }
+}
+
+// Read All (Index)
+message ReadTodosRequest {}
+
+message ReadTodosResponse {
+    // cannot use oneof as repeated is not allowed inside oneof
+    repeated ajitem.todo.Todo todos = 1;
+    ajitem.errors.Error error = 2;
+}
+
+// Update
+message UpdateTodoRequest {
+    ajitem.todo.Todo todo = 1;
+}
+
+message UpdateTodoResponse {
+    oneof updated_or_error {
+        bool updated = 1;
+        ajitem.errors.Error error = 2;
+    }
+}
+
+// Delete
+message DeleteTodoRequest {
+    int32 id = 1;
+}
+
+message DeleteTodoResponse {
+    oneof deleted_or_error {
+        bool deleted = 1;
+        ajitem.errors.Error error = 2;
+    }
 }
