@@ -8,4 +8,8 @@ import "todo-requests.proto";
 
 service TodoService {
     rpc CreateTodo (ajitem.todo.requests.CreateTodoRequest) returns (ajitem.todo.requests.CreateTodoResponse);
+    rpc ReadTodo (ajitem.todo.requests.ReadTodoRequest) returns (ajitem.todo.requests.ReadTodoResponse);
+    rpc ReadTodos (ajitem.todo.requests.ReadTodosRequest) returns (ajitem.todo.requests.ReadTodosResponse);
+    rpc UpdateTodo (ajitem.todo.requests.UpdateTodoRequest) returns (ajitem.todo.requests.UpdateTodoResponse);
+    rpc DeleteTodo (ajitem.todo.requests.DeleteTodoRequest) returns (ajitem.todo.requests.DeleteTodoResponse);
 }
