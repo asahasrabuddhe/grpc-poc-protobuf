@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ajitem.todo;
+package ajitem.todo.requests;
 
 option go_package = "go.ajitem.com/pb/todo";
 

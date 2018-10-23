@@ -4,7 +4,8 @@ package ajitem.todo;
 
 option go_package = "go.ajitem.com/pb/todo";
 
-import "protobuf/todo";
+import "todo-requests.proto";
 
-service rpc {
+service TodoService {
+    rpc CreateTodo (ajitem.todo.requests.CreateTodoRequest) returns (ajitem.todo.requests.CreateTodoResponse);
 }
