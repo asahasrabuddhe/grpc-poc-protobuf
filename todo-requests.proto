@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ajitem.todo;
+
+option go_package = "go.ajitem.com/pb/todo";
+
+import "todo.proto";
+
+message CreateTodoRequest {
+    ajitem.todo.Todo todo = 1;
+}
+
+message CreateTodoResponse {
+    int32 todo_id = 1;
+}

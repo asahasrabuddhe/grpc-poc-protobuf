@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ajitem.todo;
+
+option go_package = "go.ajitem.com/pb/todo";
+
+import "protobuf/todo";
+
+service rpc {
+}
