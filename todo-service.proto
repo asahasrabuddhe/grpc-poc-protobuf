@@ -7,9 +7,9 @@ option go_package = "go.ajitem.com/pb/todo";
 import "todo-requests.proto";
 
 service TodoService {
-    rpc CreateTodo (ajitem.todo.requests.CreateTodoRequest) returns (ajitem.todo.requests.CreateTodoResponse);
-    rpc ReadTodo (ajitem.todo.requests.ReadTodoRequest) returns (ajitem.todo.requests.ReadTodoResponse);
-    rpc ReadTodos (ajitem.todo.requests.ReadTodosRequest) returns (ajitem.todo.requests.ReadTodosResponse);
-    rpc UpdateTodo (ajitem.todo.requests.UpdateTodoRequest) returns (ajitem.todo.requests.UpdateTodoResponse);
-    rpc DeleteTodo (ajitem.todo.requests.DeleteTodoRequest) returns (ajitem.todo.requests.DeleteTodoResponse);
+    rpc CreateTodo (ajitem.todo.CreateTodoRequest) returns (ajitem.todo.CreateTodoResponse);
+    rpc ReadTodo (ajitem.todo.ReadTodoRequest) returns (ajitem.todo.ReadTodoResponse);
+    rpc ReadTodos (ajitem.todo.ReadTodosRequest) returns (ajitem.todo.ReadTodosResponse);
+    rpc UpdateTodo (ajitem.todo.UpdateTodoRequest) returns (ajitem.todo.UpdateTodoResponse);
+    rpc DeleteTodo (ajitem.todo.DeleteTodoRequest) returns (ajitem.todo.DeleteTodoResponse);
 }

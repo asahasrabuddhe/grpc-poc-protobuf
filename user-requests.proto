@@ -4,17 +4,16 @@ package ajitem.user;
 
 option go_package = "go.ajitem.com/pb/user";
 
-import "google/protobuf/timestamp.proto";
 import "error.proto";
 
 // Register
-message UserRegisterRequest {
+message RegisterRequest {
     required string name = 1;
     required string email = 2;
     required string password = 3;
 }
 
-message UserRegisterResponse {
+message RegisterResponse {
     oneof id_or_error {
         int32 todo_id = 1;
         ajitem.errors.Error error = 2;
@@ -22,12 +21,12 @@ message UserRegisterResponse {
 }
 
 // Login
-message UserLoginRequest {
+message LoginRequest {
     required string email = 1;
     required string password = 2;
 }
 
-message UserLoginResponse {
+message LoginResponse {
     oneof token_or_error {
         string token = 1;
         ajitem.errors.Error error = 2;

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ajitem.user;
+
+option go_package = "go.ajitem.com/pb/user";
+
+import "user-requests.proto";
+
+service UserService {
+    rpc Register (ajitem.user.RegisterRequest) returns (ajitem.user.RegisterResponse);
+    rpc Login (ajitem.user.LoginRequest) returns (ajitem.user.LoginResponse);
+    rpc ForgotPassword (ajitem.user.ForgotPasswordRequest) returns (ajitem.user.ForgotPasswordResponse);
+    rpc ResetPassword (ajitem.user.ResetPasswordRequest) returns (ajitem.user.ResetPasswordResponse);
+    rpc ChangePassword (ajitem.user.ChangePasswordRequest) returns (ajitem.user.ChangePasswordResponse);
+}
