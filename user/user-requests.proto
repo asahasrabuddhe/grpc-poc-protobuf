@@ -4,7 +4,7 @@ package ajitem.user;
 
 option go_package = "go.ajitem.com/pb/user";
 
-import "error.proto";
+import "errors/error.proto";
 
 // Register
 message RegisterRequest {

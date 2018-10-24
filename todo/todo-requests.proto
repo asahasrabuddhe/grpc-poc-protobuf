@@ -4,8 +4,8 @@ package ajitem.todo;
 
 option go_package = "go.ajitem.com/pb/todo";
 
-import "todo.proto";
-import "error.proto";
+import "todo/todo.proto";
+import "errors/error.proto";
 
 // Create
 message CreateTodoRequest {
