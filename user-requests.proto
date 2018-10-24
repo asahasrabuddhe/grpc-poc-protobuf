@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package ajitem.user;
+
+option go_package = "go.ajitem.com/pb/user";
+
+import "google/protobuf/timestamp.proto";
+import "error.proto";
+
+// Register
+message UserRegisterRequest {
+    required string name = 1;
+    required string email = 2;
+    required string password = 3;
+}
+
+message UserRegisterResponse {
+    oneof id_or_error {
+        int32 todo_id = 1;
+        ajitem.errors.Error error = 2;
+    }
+}
+
+// Login
+message UserLoginRequest {
+    required string email = 1;
+    required string password = 2;
+}
+
+message UserLoginResponse {
+    oneof token_or_error {
+        string token = 1;
+        ajitem.errors.Error error = 2;
+    }
+}
+
+// Forgot Password
+message ForgotPasswordRequest {
+    string email = 1;
+}
+
+message ForgotPasswordResponse {
+    oneof token_or_error {
+        string token = 1;
+        ajitem.errors.Error error = 2;
+    }
+}
+
+// Reset Password
+message ResetPasswordRequest {
+    string password = 1;
+    string forgot_password_token = 2;
+}
+
+message ResetPasswordResponse {
+    oneof success_or_error {
+        bool success = 1;
+        ajitem.errors.Error error = 2;
+    }
+}
+
+// Change Password
+message ChangePasswordRequest {
+    string password = 1;
+    string new_password = 2;
+}
+
+message ChangePasswordResponse {
+    oneof success_or_error {
+        bool success = 1;
+        ajitem.errors.Error error = 2;
+    }
+}

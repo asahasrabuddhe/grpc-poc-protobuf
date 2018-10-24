@@ -1,17 +1,16 @@
 syntax = "proto3";
 
-package ajitem.todo;
+package ajitem.user;
 
-option go_package = "go.ajitem.com/pb/todo";
+option go_package = "go.ajitem.com/pb/user";
 
 import "google/protobuf/timestamp.proto";
 
-message Todo {
+message User {
     int32 id = 1;
-    string title = 2;
-    string description = 3;
-    bool is_completed = 4;
-    int32 user_id = 8;
+    string name = 2;
+    string email = 3;
+    string password = 4;
     google.protobuf.Timestamp created_on = 5;
     google.protobuf.Timestamp updated_on = 6;
     google.protobuf.Timestamp deleted_on = 7;
