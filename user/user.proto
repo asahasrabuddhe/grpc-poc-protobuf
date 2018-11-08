@@ -11,6 +11,7 @@ message User {
     string name = 2;
     string email = 3;
     string password = 4;
+    bool is_active = 8;
     google.protobuf.Timestamp created_on = 5;
     google.protobuf.Timestamp updated_on = 6;
     google.protobuf.Timestamp deleted_on = 7;
