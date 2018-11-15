@@ -20,6 +20,18 @@ message RegisterResponse {
     }
 }
 
+// Confirm Email
+message ConfirmEmailRequest {
+    string token = 1;
+}
+
+message ConfirmEmailResponse {
+    oneof status_or_error {
+        bool status = 1;
+        ajitem.errors.Error error = 2;
+    }
+}
+
 // Login
 message LoginRequest {
     string email = 1;
