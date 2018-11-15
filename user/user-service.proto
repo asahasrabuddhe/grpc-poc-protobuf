@@ -12,4 +12,5 @@ service UserService {
     rpc ForgotPassword (ajitem.user.ForgotPasswordRequest) returns (ajitem.user.ForgotPasswordResponse);
     rpc ResetPassword (ajitem.user.ResetPasswordRequest) returns (ajitem.user.ResetPasswordResponse);
     rpc ChangePassword (ajitem.user.ChangePasswordRequest) returns (ajitem.user.ChangePasswordResponse);
+    rpc ConfirmEmail (ajitem.user.ConfirmEmailRequest) returns (ajitem.user.ConfirmEmailResponse);
 }
